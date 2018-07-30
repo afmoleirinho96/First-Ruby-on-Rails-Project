@@ -1,0 +1,41 @@
+<div class="smart-green">
+  <br>
+
+  <p id="notice"><%= notice %></p>
+  <div>
+  <h1>Listing Contacts / <%=@my_name%> </h1>
+  <table class="table">
+
+    <thead>
+      <tr>
+         <th scope="col"> Name</th>
+         <th scope="col">Email</th>
+         <th scope="col">Kind</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr style="background: <%= cycle("white", "#f2f2f2") %>">
+          <td><%= contact.name %></td>
+          <td><%= contact.email %></td>
+          <td><%= contact.kind.description %></td>
+          <td><%= link_to 'Show', contact, class:"btn btn-light" %></td>
+          <td><%= link_to 'Edit', edit_contact_path(contact), class:"btn btn-light"%></td>
+          <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-light" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @contacts %>
+  <br>
+
+
+  <%= link_to 'New Contact', new_contact_path, class:"btn btn-primary" %>
+  <%= link_to 'Home', root_path, class:"btn btn-outline-success" %>
+
+
+</div>
+  <%# %= render partial: 'contacts/sharedPartials/test' %>
+
+</div>

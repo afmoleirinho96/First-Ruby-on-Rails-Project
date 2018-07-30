@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notebook</title>
+
+  <%= stylesheet_link_tag    params[:controller] %>
+  <%= stylesheet_link_tag    'application' %>
+
+  <%#<%= javascript_include_tag 'alert' %>
+  <%= javascript_include_tag params[:controller] %>
+  <%= csrf_meta_tags %>
+</head>
+<body
+  <div class="smart-green">
+    <script>
+      $.notify("Welcome to your agenda!")
+    </script>
+    <%= yield %>
+  </div>
+</body>
+</html>
